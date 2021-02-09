@@ -1,11 +1,9 @@
 const $$events = Symbol('events')
 
-type IEventEmitter = {
-    [$$events]?: { [key: string]: ((...args: any[]) => void)[] }
-}
-
 export class EventEmitter {
-    on(this: IEventEmitter, ev: string, fn: (...args: any) => void) {
+    private [$$events]?: { [key: string]: ((...args: any[]) => void)[] }
+
+    on(ev: string, fn: (...args: any) => void) {
         if (!this[$$events]) {
             this[$$events] = {}
         }
@@ -27,7 +25,7 @@ export class EventEmitter {
         }
     }
 
-    emit(this: IEventEmitter, ev: string, ...args: any[]) {
+    emit(ev: string, ...args: any[]) {
         const events = this[$$events] && this[$$events]![ev]
         if (events) {
             events.forEach(fn => {
