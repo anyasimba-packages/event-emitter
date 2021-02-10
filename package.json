@@ -1,6 +1,6 @@
 {
   "name": "anyasimba.event-emitter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -8,7 +8,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build" : "tsc"
   },
-  "author": "Anya Simba",
+  "author": {
+    "name": "Anya Simba",
+    "email": "anyasimba@yandex.ru",
+    "url": "https://career.habr.com/anyasimba"
+  },
   "license": "ISC",
   "repository": {
     "type": "git",
